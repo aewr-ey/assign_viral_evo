@@ -29,7 +29,7 @@ def jukes_cantor(reference_sequence: str, distant_sequence: str) -> float:
     for i in range(len(reference_sequence)):
         ref = reference_sequence[i]
         dist = distant_sequence[i]
-        
+
         if ref == '-' or dist == '-':
             continue
 
@@ -43,6 +43,7 @@ def jukes_cantor(reference_sequence: str, distant_sequence: str) -> float:
     # jukes-cantor correction - d
     distance = -3/4 * math.log(1- (4/3*(hamming_proportion)))
 
+    # apply distance for all the nucleotides 
     return distance * total
 
 
